@@ -4,56 +4,23 @@ import Footer from '@/components/feature/Footer';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '49',
+    name: 'All Features',
+    price: '500',
     period: '/month',
-    desc: 'Perfect for small boutique hotels and B&Bs.',
+    desc: 'Everything you need to listen to your guests.',
     features: [
-      'Up to 25 rooms',
+      'Unlimited rooms',
       'In-stay & post-stay surveys',
-      'Basic analytics dashboard',
-      'Email delivery',
-      '3 team members',
-      'Email support',
-    ],
-    highlighted: false,
-  },
-  {
-    name: 'Professional',
-    price: '149',
-    period: '/month',
-    desc: 'For growing hotels that want deeper insights.',
-    features: [
-      'Up to 100 rooms',
-      'Everything in Starter',
       'AI sentiment analysis',
       'Category-level breakdowns',
       'Benchmark comparisons',
       'SMS + QR code delivery',
       'Weekly executive summaries',
-      '10 team members',
+      'Unlimited team members',
       'Priority support',
     ],
     highlighted: true,
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    desc: 'For hotel groups and large resorts.',
-    features: [
-      'Unlimited rooms',
-      'Everything in Professional',
-      'Custom integrations',
-      'Dedicated success manager',
-      'Multi-property dashboard',
-      'White-label surveys',
-      'API access',
-      'Unlimited team members',
-      '24/7 phone support',
-    ],
-    highlighted: false,
-  },
+  }
 ];
 
 function AnimatedPrice({ annual, basePrice, period }: { annual: boolean; basePrice: string; period: string }) {
@@ -98,7 +65,7 @@ function AnimatedPrice({ annual, basePrice, period }: { annual: boolean; basePri
   return (
     <div className="flex items-baseline gap-1">
       <span className="font-heading text-6xl md:text-7xl font-medium text-foreground-950 tabular-nums tracking-tighter">
-        ${currentDisplay}
+        GHC {currentDisplay}
       </span>
       <span className="text-foreground-500 font-sans text-sm tracking-widest uppercase">{period}</span>
     </div>
@@ -148,7 +115,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+          <div className="flex justify-center items-center max-w-2xl mx-auto">
             {plans.map((plan) => (
               <div
                 key={plan.name}

@@ -70,7 +70,7 @@ export default function SolutionSection() {
                   alt="Guest survey on mobile"
                   loading="lazy"
                   className="w-full aspect-[4/3] object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  src="https://readdy.ai/api/search-image?query=Elegant%20hotel%20guest%20using%20smartphone%20to%20fill%20out%20a%20satisfaction%20survey%2C%20warm%20ambient%20lighting%20in%20a%20beautiful%20hotel%20lounge%2C%20soft%20cream%20and%20beige%20background%2C%20editorial%20lifestyle%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition%20with%20shallow%20depth%20of%20field&width=800&height=600&seq=survey-mobile-card&orientation=landscape"
+                  src="/images/survey_mobile.png"
                 />
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function SolutionSection() {
                   alt="Analytics dashboard"
                   loading="lazy"
                   className="w-full aspect-[4/3] object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  src="https://readdy.ai/api/search-image?query=Modern%20clean%20analytics%20dashboard%20on%20a%20laptop%20screen%20showing%20hotel%20guest%20satisfaction%20metrics%20and%20charts%2C%20warm%20ambient%20lighting%20on%20a%20wooden%20desk%20in%20a%20hotel%20office%2C%20soft%20cream%20background%2C%20editorial%20tech%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=800&height=600&seq=analytics-dashboard&orientation=landscape"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
                 />
               </div>
             </div>

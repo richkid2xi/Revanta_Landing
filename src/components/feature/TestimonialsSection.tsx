@@ -4,24 +4,21 @@ const testimonials = [
   {
     name: 'Elena Rossi',
     role: 'Owner, Villa Toscana Boutique Hotel',
-    image:
-      'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20confident%20Italian%20woman%20in%20her%2040s%20with%20dark%20hair%2C%20wearing%20a%20cream%20linen%20blazer%2C%20soft%20warm%20studio%20background%20with%20gentle%20lighting%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=400&height=400&seq=testimonial-elena&orientation=squarish',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80',
     quote:
       'Before Revanta, we were guessing. Now I know exactly which rooms guests love, which breakfast items they skip, and which staff members they mention by name. Our TripAdvisor rating went from 4.2 to 4.7 in eight months.',
   },
   {
     name: 'Marcus Chen',
     role: 'General Manager, The Langford City Hotel',
-    image:
-      'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20Asian%20man%20in%20his%20late%2030s%20wearing%20a%20navy%20blazer%2C%20confident%20professional%20expression%2C%20soft%20warm%20cream%20studio%20background%2C%20editorial%20portrait%20photography%2C%20natural%20lighting%2C%20high%20detail%20harmonious%20composition&width=400&height=400&seq=testimonial-marcus&orientation=squarish',
+    image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=150&q=80',
     quote:
       'The in-stay survey caught a plumbing issue on the third floor before it affected more than two rooms. We fixed it within the hour and those guests ended up leaving a five-star review. That alone paid for the whole year.',
   },
   {
     name: 'Sarah Okafor',
     role: 'Director, Azure Beach Resort & Spa',
-    image:
-      'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20elegant%20Black%20woman%20in%20her%2030s%20with%20natural%20hair%2C%20wearing%20a%20soft%20beige%20blouse%2C%20warm%20studio%20background%20with%20gentle%20lighting%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=400&height=400&seq=testimonial-sarah&orientation=squarish',
+    image: 'https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?auto=format&fit=crop&w=150&q=80',
     quote:
       'The weekly executive summary saves me four hours every Monday. I walk into team meetings with hard numbers — not opinions. My housekeeping team actually gets excited now because they can see their scores improving week over week.',
   },

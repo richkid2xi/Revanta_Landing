@@ -58,9 +58,7 @@ export default function ContactPage() {
                   Global Headquarters
                 </h3>
                 <address className="not-italic text-foreground-950 font-heading text-2xl leading-relaxed">
-                  <p>100 Hospitality Way</p>
-                  <p>Suite 400</p>
-                  <p>San Francisco, CA 94105</p>
+                  <p>Accra, Ghana</p>
                 </address>
               </div>
 
@@ -71,13 +69,18 @@ export default function ContactPage() {
                 </h3>
                 <div className="text-foreground-950 font-heading text-xl space-y-4">
                   <p>
-                    <a href="mailto:partnerships@revanta.com" className="hover:text-primary-600 transition-colors border-b border-foreground-950/20 hover:border-primary-600 pb-1">
-                      partnerships@revanta.com
+                    <a href="mailto:revanta2026@gmail.com" className="hover:text-primary-600 transition-colors border-b border-foreground-950/20 hover:border-primary-600 pb-1">
+                      revanta2026@gmail.com
                     </a>
                   </p>
                   <p>
-                    <a href="tel:+18005550199" className="hover:text-primary-600 transition-colors border-b border-foreground-950/20 hover:border-primary-600 pb-1">
-                      +1 (800) 555-0199
+                    <a href="tel:0542818334" className="hover:text-primary-600 transition-colors border-b border-foreground-950/20 hover:border-primary-600 pb-1">
+                      0542818334
+                    </a>
+                  </p>
+                  <p>
+                    <a href="tel:0206891111" className="hover:text-primary-600 transition-colors border-b border-foreground-950/20 hover:border-primary-600 pb-1">
+                      0206891111
                     </a>
                   </p>
                 </div>

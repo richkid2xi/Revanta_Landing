@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Can I customize the survey questions?',
-    a: 'Absolutely. While we provide industry-tested templates that work great out of the box, you can fully customize every question, add your branding, and create department-specific survey flows.',
+    a: 'No. Our proprietary industry-tested survey templates are designed by hospitality experts to maximize completion rates. They are built to work perfectly out of the box and cannot be customized, ensuring you get standard, benchmarkable insights from every guest.',
   },
   {
     q: 'How does the AI sentiment analysis work?',

@@ -12,8 +12,7 @@ export default function CTASection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
           style={{
-            backgroundImage:
-              'url(https://readdy.ai/api/search-image?query=Elegant%20luxury%20hotel%20lobby%20with%20warm%20golden%20ambient%20lighting%2C%20plush%20seating%20areas%2C%20grand%20chandelier%2C%20marble%20floors%2C%20sophisticated%20hospitality%20atmosphere%2C%20soft%20golden%20hour%20glow%2C%20editorial%20interior%20photography%2C%20warm%20cream%20and%20amber%20tones%2C%20high%20detail%20inviting%20composition&width=1600&height=800&seq=cta-hotel-bg&orientation=landscape)',
+            backgroundImage: `url('https://images.unsplash.com/photo-1582719508461-908602433276?auto=format&fit=crop&w=1600&q=80')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-accent-900/70 to-black/80 pointer-events-none" />

@@ -40,6 +40,11 @@ export default function Footer() {
                 <p className="font-sans text-[15px] font-light leading-relaxed text-zinc-400 max-w-xs">
                   The premier guest intelligence platform designed exclusively for hoteliers who believe that true hospitality begins with listening.
                 </p>
+                <p className="font-sans text-[15px] font-light leading-relaxed text-zinc-400 max-w-xs mt-4">
+                  Headquarters: Accra, Ghana <br />
+                  Email: revanta2026@gmail.com <br />
+                  Phone: 0542818334, 0206891111
+                </p>
               </div>
             </div>
 
@@ -103,9 +108,14 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-sans text-[13px] text-zinc-500 font-light tracking-wide">
-              &copy; {new Date().getFullYear()} Revanta. Built for hoteliers who care.
-            </p>
+            <div className="flex flex-col gap-1">
+              <p className="font-sans text-[13px] text-zinc-500 font-light tracking-wide">
+                &copy; {new Date().getFullYear()} Revanta. Built for hoteliers who care.
+              </p>
+              <p className="font-sans text-[12px] text-zinc-600 font-light tracking-wide">
+                Powered by EliTech CreaTives
+              </p>
+            </div>
             <div className="flex items-center gap-6">
               <a href="https://twitter.com" className="text-zinc-500 hover:text-white transition-colors" aria-label="Twitter">
                 <i className="ri-twitter-x-line text-lg" />

@@ -18,18 +18,16 @@ function useReveal<T extends HTMLElement>() {
 }
 
 const team = [
-  { name: 'Aditya Sharma', role: 'Co-Founder & CEO', image: 'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20Indian%20man%20in%20his%20late%2030s%20wearing%20a%20tailored%20navy%20blazer%2C%20confident%20friendly%20expression%2C%20soft%20warm%20cream%20studio%20background%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=300&height=300&seq=team-aditya&orientation=squarish' },
-  { name: 'Isabel Moreno', role: 'Co-Founder & CPO', image: 'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20Latin%20American%20woman%20in%20her%2030s%20with%20dark%20wavy%20hair%2C%20wearing%20a%20cream%20linen%20blazer%2C%20soft%20warm%20studio%20background%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=300&height=300&seq=team-isabel&orientation=squarish' },
-  { name: 'David Osei', role: 'Head of Engineering', image: 'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20Black%20man%20in%20his%20early%2030s%20wearing%20a%20simple%20dark%20sweater%2C%20friendly%20smile%2C%20soft%20warm%20cream%20studio%20background%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=300&height=300&seq=team-david&orientation=squarish' },
-  { name: 'Clara Johansson', role: 'Head of Customer Success', image: 'https://readdy.ai/api/search-image?query=Warm%20portrait%20of%20Scandinavian%20woman%20in%20her%2030s%20with%20blonde%20hair%2C%20wearing%20a%20soft%20beige%20blouse%2C%20warm%20friendly%20expression%2C%20soft%20cream%20studio%20background%2C%20editorial%20portrait%20photography%2C%20warm%20neutral%20tones%2C%20high%20detail%20professional%20composition&width=300&height=300&seq=team-clara&orientation=squarish' },
+  { name: 'Moses Amenorpe', role: 'Founder & CEO', image: '' },
+  { name: 'Richard Elikem', role: 'Lead Developer', image: '' },
+  { name: 'Bright Akoto', role: 'Frontend Developer & SEO Specialist', image: '' },
 ];
 
 const milestones = [
-  { year: '2021', event: 'Founded', detail: 'Revanta is founded in San Francisco after two years of research with hotel operators across Asia and Europe.' },
-  { year: '2022', event: 'First 50 Hotels', detail: 'We reach our first 50 hotel customers across four countries, with an average guest survey completion rate of 91%.' },
-  { year: '2023', event: 'AI Engine Launch', detail: 'We launch our proprietary sentiment analysis engine, enabling real-time feedback categorization across 14 languages.' },
-  { year: '2024', event: 'Series A', detail: 'Revanta raises a $7M Series A round to expand the team and accelerate product development across EMEA.' },
-  { year: '2025', event: '500+ Properties', detail: 'More than 500 properties across 28 countries rely on Revanta to listen to their guests every day.' },
+  { year: '2024', event: 'Problem Discovery', detail: 'The founding team identifies the pressing need for better guest feedback systems in the African hospitality sector.' },
+  { year: '2025', event: 'Research & Development', detail: 'We spend the year interviewing hotel operators and building the core platform tailored to real operational needs.' },
+  { year: '2026', event: 'Refining the Solution', detail: 'Working closely with select pilot properties in Accra to iterate on our sentiment analysis and survey tools.' },
+  { year: 'Present', event: 'Launch', detail: 'Revanta officially launches to help hotels turn guest feedback into actionable insights and better business.' },
 ];
 
 const stats = [
@@ -192,7 +190,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
               {team.map((member, idx) => (
                 <div
                   key={member.name}
@@ -200,12 +198,19 @@ export default function AboutPage() {
                   style={{ transitionDelay: `${idx * 120}ms` }}
                 >
                   <div className="aspect-[3/4] w-full overflow-hidden mb-6 bg-background-200">
-                    <img
-                      alt={member.name}
-                      loading="lazy"
-                      className="w-full h-full object-cover object-center grayscale opacity-60 dark:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out group-hover:scale-105"
-                      src={member.image}
-                    />
+                    {member.image ? (
+                      <img
+                        alt={member.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-center grayscale opacity-60 dark:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out group-hover:scale-105"
+                        src={member.image}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center bg-background-200/50">
+                        <i className="ri-user-smile-line text-5xl text-foreground-300 mb-2" />
+                        <span className="text-[10px] text-foreground-400 uppercase tracking-widest">Photo</span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex justify-between items-end border-b border-background-200 pb-3 group-hover:border-primary-500 transition-colors duration-500">
                     <div>
@@ -260,7 +265,7 @@ export default function AboutPage() {
         {/* ── CTA Banner ── */}
         <section className="py-24 px-4 md:px-8 bg-foreground-950">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-4xl md:text-6xl text-white font-medium leading-tight mb-6">
+            <h2 className="font-heading text-4xl md:text-6xl text-background-50 font-medium leading-tight mb-6">
               Ready to start <span className="italic font-light text-background-400">listening?</span>
             </h2>
             <p className="font-sans text-lg text-background-400 font-light mb-10 max-w-xl mx-auto">
