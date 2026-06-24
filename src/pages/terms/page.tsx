@@ -42,38 +42,52 @@ const sections = [
   {
     title: 'Contact',
     paragraphs: [
-      'For questions about these terms, please contact us at legal@revanta.io.',
+      'For questions about these terms, please contact us at legal@revanta.com.',
     ],
   },
 ];
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-background-50">
+    <div className="min-h-screen bg-background-50 flex flex-col">
       <Navbar />
-      <main>
-        <section className="pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="font-heading text-3xl md:text-5xl tracking-[-0.02em] text-foreground-950 font-semibold leading-[1.05] mb-4">
-              Terms of Service
+      <main className="flex-1 pt-32 pb-32 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-24 md:mb-32">
+            <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-primary-600 mb-6 flex items-center gap-4">
+              <span className="w-12 h-[1px] bg-primary-600" />
+              Legal
+            </span>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-[80px] text-foreground-950 font-medium leading-[1.05] tracking-tight">
+              Terms of <span className="italic font-light text-foreground-600">Service</span>
             </h1>
-            <p className="text-foreground-500 text-[14px] mb-10">Last updated: June 2026</p>
-            <div className="space-y-10">
-              {sections.map((section) => (
-                <div key={section.title}>
-                  <h2 className="font-heading text-xl md:text-2xl text-foreground-950 font-semibold mb-3">
+            <p className="mt-8 font-sans text-sm tracking-widest uppercase text-foreground-500 font-semibold">
+              Effective Date: June 2026
+            </p>
+          </div>
+
+          <div className="space-y-24">
+            {sections.map((section, idx) => (
+              <div key={section.title} className="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
+                <div className="md:col-span-4 sticky top-32">
+                  <span className="block text-6xl md:text-8xl font-heading font-light text-primary-200 leading-none mb-4">
+                    0{idx + 1}
+                  </span>
+                  <h2 className="font-heading text-2xl md:text-3xl text-foreground-950 font-medium pt-4 border-t-2 border-foreground-950">
                     {section.title}
                   </h2>
+                </div>
+                <div className="md:col-span-8 space-y-6 md:pt-24">
                   {section.paragraphs.map((p, i) => (
-                    <p key={i} className="text-foreground-700 text-[15px] leading-relaxed mb-3">
+                    <p key={i} className="text-foreground-700 font-sans text-lg md:text-xl font-light leading-relaxed">
                       {p}
                     </p>
                   ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </div>

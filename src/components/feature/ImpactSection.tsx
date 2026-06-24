@@ -16,7 +16,7 @@ function StatCard({ target, suffix, label, isFloat, started }: {
   isFloat?: boolean;
   started: boolean;
 }) {
-  const count = useCountUp(isFloat ? target * 10 : target, 1800, started);
+  const count = useCountUp(isFloat ? target * 10 : target, 3000, started);
   const display = isFloat ? (count / 10).toFixed(1) : count;
 
   return (

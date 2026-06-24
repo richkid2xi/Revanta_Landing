@@ -1,77 +1,103 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(true);
-  if (!visible) return null;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already accepted/declined
+    const cookieChoice = localStorage.getItem('revanta-cookie-choice');
+    if (!cookieChoice) {
+      // Small delay for the slide-in animation to feel natural
+      const timer = setTimeout(() => setVisible(true), 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleDismiss = (choice: 'accept' | 'decline') => {
+    localStorage.setItem('revanta-cookie-choice', choice);
+    setVisible(false);
+  };
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 bg-background-50/95 backdrop-blur-md border-t border-background-200/60 shadow-lg">
-      {/* Mobile layout */}
-      <div className="md:hidden px-4 py-4">
-        <div className="flex items-start gap-3 mb-3">
-          <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center shrink-0 mt-0.5">
-            <i className="ri-cookie-line text-primary-600 text-sm" />
+    <>
+      {/* Mobile floating card */}
+      <div
+        className={`md:hidden fixed bottom-4 left-4 right-4 z-50 transition-all duration-700 ease-out ${
+          visible ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-2xl rounded-2xl p-5 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400" />
+          <div className="flex items-start gap-3 mb-4">
+            <span className="text-3xl leading-none mt-0.5 shrink-0">🍪</span>
+            <div>
+              <h4 className="font-heading text-base font-semibold text-zinc-900 dark:text-white mb-1">
+                We use cookies
+              </h4>
+              <p className="font-sans text-[13px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+                We use cookies to improve your experience on our site. Read our{' '}
+                <a href="/privacy" className="text-primary-600 font-medium hover:underline">
+                  Privacy Policy
+                </a>
+                .
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-semibold text-foreground-950 mb-0.5">Cookie Preferences</p>
-            <p className="text-xs text-foreground-600 leading-relaxed">
-              We use cookies to improve your experience. Read our{' '}
-              <a className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2" href="/privacy">
-                Privacy Policy
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => setVisible(false)}
-            className="flex-1 h-10 rounded-full border border-background-200 text-sm font-medium text-foreground-700 hover:bg-background-100 transition-colors cursor-pointer"
-          >
-            Decline
-          </button>
-          <button
-            type="button"
-            onClick={() => setVisible(false)}
-            className="flex-1 h-10 bg-primary-500 text-white text-sm font-medium rounded-full hover:bg-primary-600 transition-colors cursor-pointer"
-          >
-            Accept all
-          </button>
-        </div>
-      </div>
-
-      {/* Desktop layout */}
-      <div className="hidden md:block px-8 py-5">
-        <div className="max-w-6xl mx-auto flex items-center gap-6">
-          <div className="w-9 h-9 rounded-full bg-primary-100 flex items-center justify-center shrink-0">
-            <i className="ri-cookie-line text-primary-600 text-base" />
-          </div>
-          <p className="text-sm text-foreground-700 flex-1 leading-relaxed">
-            We use cookies to ensure you get the best experience on our site. Read our{' '}
-            <a className="text-primary-600 hover:text-primary-700 font-medium" href="/privacy">
-              Privacy Policy
-            </a>
-            .
-          </p>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex gap-2">
             <button
               type="button"
-              onClick={() => setVisible(false)}
-              className="px-5 h-10 rounded-full border border-background-200 text-sm font-medium text-foreground-700 hover:bg-background-100 transition-colors cursor-pointer"
+              onClick={() => handleDismiss('decline')}
+              className="flex-1 h-10 rounded-full border border-zinc-200 dark:border-zinc-700 text-xs font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
             >
               Decline
             </button>
             <button
               type="button"
-              onClick={() => setVisible(false)}
-              className="px-5 h-10 bg-primary-500 text-white text-sm font-medium rounded-full hover:bg-primary-600 transition-colors cursor-pointer"
+              onClick={() => handleDismiss('accept')}
+              className="flex-1 h-10 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-primary-600 dark:hover:bg-primary-400 dark:hover:text-white text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 cursor-pointer"
             >
               Accept all
             </button>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Desktop full-width bottom bar */}
+      <div
+        className={`hidden md:block fixed bottom-0 inset-x-0 z-50 transition-all duration-700 ease-out ${
+          visible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 shadow-2xl">
+          <div className="max-w-7xl mx-auto px-8 py-4 flex items-center gap-6">
+            <span className="text-3xl shrink-0 leading-none">🍪</span>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 flex-1 leading-relaxed font-light">
+              <span className="font-semibold text-zinc-900 dark:text-white">We use cookies.</span>{' '}
+              We use cookies to ensure you get the best experience on our site. Read our{' '}
+              <a className="text-primary-600 dark:text-primary-400 font-medium hover:underline" href="/privacy">
+                Privacy Policy
+              </a>
+              .
+            </p>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => handleDismiss('decline')}
+                className="px-6 h-10 rounded-full border border-zinc-200 dark:border-zinc-700 text-xs font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer whitespace-nowrap"
+              >
+                Decline
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDismiss('accept')}
+                className="px-8 h-10 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-primary-600 dark:hover:bg-primary-400 dark:hover:text-white text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 cursor-pointer whitespace-nowrap"
+              >
+                Accept all
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

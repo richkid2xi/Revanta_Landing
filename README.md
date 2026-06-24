@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Revanta Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Revanta is a modern, responsive landing page for a guest feedback platform designed specifically for hotels and resorts.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Routing:** React Router v6
+- **Icons:** RemixIcon & FontAwesome
+- **Fonts:** Geist, Inter, and Cormorant Garamond
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Development Server
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Start the Vite development server with Hot Module Replacement (HMR):
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Production Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Create a production-ready build:
+
+```bash
+npm run build
 ```
+
+The compiled assets will be placed in the `dist` directory.
+
+## Project Structure
+
+- `src/components/feature/` - UI components (Navbar, Sections, Footer)
+- `src/pages/` - Page-level components (Home, Contact, Pricing, etc.)
+- `src/hooks/` - Custom React hooks (Theme, Scroll Animations)
+- `src/router/` - React Router configuration
+- `src/index.css` - Global CSS and Tailwind `@theme` configuration
+
+## Features
+
+- **Dark Mode Support:** Fully persistent dark mode using custom OKLCH color variables and `localStorage`.
+- **Responsive Design:** Optimized for mobile, tablet, and desktop viewports.
+- **Micro-interactions:** Scroll-reveal animations and number counting effects.
+- **Modern Routing:** Client-side routing with `react-router-dom`.
