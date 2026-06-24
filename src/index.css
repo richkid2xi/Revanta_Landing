@@ -155,5 +155,12 @@
   body {
     @apply bg-background-50 text-foreground-950 antialiased;
   }
+  
+  /* Prevent iOS Safari zoom on focus */
+  @media screen and (max-width: 768px) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
+  }
 }
 

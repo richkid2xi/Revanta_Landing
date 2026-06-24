@@ -113,7 +113,15 @@ export default function Footer() {
                 &copy; {new Date().getFullYear()} Revanta. Built for hoteliers who care.
               </p>
               <p className="font-sans text-[12px] text-zinc-600 font-light tracking-wide">
-                Powered by EliTech CreaTives
+                Powered by{' '}
+                <a 
+                  href="https://elitech-creatives.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-300 transition-colors underline underline-offset-2"
+                >
+                  EliTech CreaTives
+                </a>
               </p>
             </div>
             <div className="flex items-center gap-6">

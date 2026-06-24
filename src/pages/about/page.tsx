@@ -115,7 +115,7 @@ export default function AboutPage() {
             <p>
               TripAdvisor reviews arrive weeks after checkout. Front desk feedback gets lost in shift
               handovers. And those paper comment cards?{' '}
-              <span className="text-white font-medium italic">Nobody fills them out.</span>
+              <span className="text-primary-400 dark:text-primary-300 font-medium italic">Nobody fills them out.</span>
             </p>
             <p>
               We built Revanta to close that gap. Our platform makes it effortless for hotels to collect
@@ -177,15 +177,15 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div
               ref={teamRef.ref}
-              className={`flex flex-col md:flex-row items-end justify-between mb-16 md:mb-24 gap-8 transition-all duration-700 ease-out ${teamRef.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`flex flex-col items-center md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8 transition-all duration-700 ease-out ${teamRef.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              <div>
+              <div className="text-center md:text-left">
                 <h2 className="font-heading text-4xl md:text-6xl text-foreground-950 font-medium">
                   The people <br />
                   <span className="italic text-foreground-500 font-light">behind Revanta</span>
                 </h2>
               </div>
-              <p className="text-foreground-600 font-sans text-sm tracking-widest uppercase max-w-xs md:text-right">
+              <p className="text-foreground-600 font-sans text-sm tracking-widest uppercase max-w-xs text-center md:text-right">
                 A dedicated team of hospitality experts and engineers.
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function AboutPage() {
                   className={`relative group transition-all duration-700 ease-out ${valuesRef.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   style={{ transitionDelay: `${200 + idx * 150}ms` }}
                 >
-                  <div className="absolute -top-12 left-0 text-[120px] font-heading font-light text-primary-100/50 leading-none -z-10 group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="absolute -top-12 left-0 text-[120px] font-heading font-light text-foreground-950/15 dark:text-white/25 leading-none -z-10 group-hover:text-primary-500/25 group-hover:-translate-y-2 transition-all duration-500">
                     {idx + 1}
                   </div>
                   <div className="border-t-2 border-foreground-950 pt-6 mt-12">

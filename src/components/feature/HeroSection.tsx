@@ -73,7 +73,7 @@ export default function HeroSection() {
             See how it works
           </a>
         </div>
-        <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-[11px] font-medium text-white/60 uppercase tracking-[0.2em]">Scroll</span>
           <div className="w-5 h-8 rounded-full border border-white/40 flex items-start justify-center p-1">
             <div className="w-1 h-2 rounded-full bg-white bouncer" />
