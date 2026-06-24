@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Rounded square background in primary-500 gold -->
+  <rect width="32" height="32" rx="8" fill="oklch(0.64 0.18 75)"/>
+  <!-- Hotel/building icon (simplified ri-hotel-line style) -->
+  <g fill="white">
+    <!-- Main building body -->
+    <rect x="7" y="13" width="18" height="13" rx="1"/>
+    <!-- Roof / peaked top -->
+    <polygon points="16,5 6,13 26,13"/>
+    <!-- Door cutout (dark) -->
+    <rect x="13" y="19" width="6" height="7" rx="1" fill="oklch(0.64 0.18 75)"/>
+    <!-- Left window -->
+    <rect x="9" y="16" width="3" height="3" rx="0.5" fill="oklch(0.64 0.18 75)"/>
+    <!-- Right window -->
+    <rect x="20" y="16" width="3" height="3" rx="0.5" fill="oklch(0.64 0.18 75)"/>
+  </g>
+</svg>
